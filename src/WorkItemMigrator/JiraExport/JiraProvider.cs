@@ -82,7 +82,7 @@ namespace JiraExport
 
         public IssueLinkType GetLinkType(string linkTypeString, string targetItemKey)
         {
-            return LinkTypes.FirstOrDefault(lt => linkTypeString.EndsWith(lt.Outward + " " + targetItemKey));
+            return LinkTypes.FirstOrDefault(lt => linkTypeString.EndsWith(lt.Inward + " " + targetItemKey) || linkTypeString.EndsWith(lt.Outward + " " + targetItemKey));
         }
 
         public IEnumerable<Comment> GetCommentsByItemKey(string itemKey)

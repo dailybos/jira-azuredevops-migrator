@@ -341,7 +341,7 @@ namespace JiraExport
                     {
                         SourceItem = sourceItemKey,
                         TargetItem = targetItemKey,
-                        LinkType = linkType.Name,
+                        LinkType = linkTypeString.Contains(linkType.Inward) ? linkType.Inward : linkTypeString.Contains(linkType.Outward) ? linkType.Outward : linkType.Name,
                     }
                 };
             }
